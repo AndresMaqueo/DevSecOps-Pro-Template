@@ -1,0 +1,15 @@
+name: SLSA Provenance CI
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate provenance
+        uses: github-early-access/generate-build-provenance@v1

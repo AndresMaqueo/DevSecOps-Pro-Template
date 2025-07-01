@@ -18,7 +18,8 @@ jobs:
 
       - name: Inicializar CodeQL
         uses: github/codeql-action/init@v3
-        # Idiomas removidos porque aún no hay código fuente
+        with:
+          languages: javascript
 
       - name: Ejecutar análisis CodeQL
         uses: github/codeql-action/analyze@v3

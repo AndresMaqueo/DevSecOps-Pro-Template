@@ -1,0 +1,30 @@
+name: SLSA Procedencia CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate SLSA provenance
+        uses: github/codeql-action/generate-slsa-provenance@v2
+        with:
+          output: slsa-provenance.slsa.json
+
+      - name: Upload provenance artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: slsa-provenance
+          path: slsa-provenance.slsa.json

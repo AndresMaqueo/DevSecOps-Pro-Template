@@ -2,7 +2,8 @@ name: SLSA Procedencia CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -10,9 +11,10 @@ permissions:
   attestations: write
 
 jobs:
-  procedencia:
+  provenance:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Generar procedencia
-        uses: github/codeql-action/generate-slsa-provenance@v1
+
+      - name: Generar procedencia SLSA
+        uses: github/codeql-action/generate-slsa-provenance@v2

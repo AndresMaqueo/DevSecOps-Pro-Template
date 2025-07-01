@@ -10,9 +10,9 @@ permissions:
   attestations: write
 
 jobs:
-  provenance:
+  procedencia:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Generar procedencia
-        uses: github/codeql-action/generate-slsa-provenance@v2
+        uses: github/codeql-action/generate-slsa-provenance@v1

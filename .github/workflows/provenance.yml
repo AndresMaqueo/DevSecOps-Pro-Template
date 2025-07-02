@@ -1,0 +1,27 @@
+name: SLSA Procedencia CI
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build básico
+        run: |
+          mkdir -p dist
+          echo "Build de ejemplo con SLSA" > dist/build.txt
+
+      - name: Generar Provenance
+        uses: slsa-framework/slsa-github-generator@v1.3.0
+        with:
+          artifact_path: ./dist

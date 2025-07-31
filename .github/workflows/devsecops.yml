@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: read
+  security-events: write
   id-token: write
   attestations: write
 
@@ -19,19 +20,6 @@ jobs:
         with:
           languages: 'javascript'
       - uses: github/codeql-action/analyze@v2
-
-  # Defender for DevOps Scan está comentado porque la versión especificada no existe o da error.
-  # Descomenta y ajusta la versión cuando tengas la correcta.
-
-  # defender:
-  #   name: Defender for DevOps Scan
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Run Defender Scan
-  #       uses: microsoft/defender-for-devops@v0.3.3
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
 
   slsa_provenance:
     name: Generate SLSA Provenance
@@ -47,5 +35,6 @@ jobs:
         uses: slsa-framework/slsa-github-generator@v1.3.0
         with:
           artifact_path: ./dist
+
 
 

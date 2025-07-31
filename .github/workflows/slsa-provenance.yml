@@ -22,7 +22,7 @@ jobs:
           echo "Compilación de ejemplo con SLSA" > dist/build.txt
 
       - name: Generar Procedencia
-        uses: slsa-framework/slsa-github-generator/generator/javascript@v2
+        uses: slsa-framework/slsa-github-generator/generator/javascript@v1
         with:
           artifact_path: ./dist
 

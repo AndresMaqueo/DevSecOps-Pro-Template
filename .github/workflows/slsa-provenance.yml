@@ -11,7 +11,7 @@ permissions:
   attestations: write
 
 jobs:
-  provenance:
+  procedencia:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,9 +19,10 @@ jobs:
       - name: Build básico
         run: |
           mkdir -p dist
-          echo "Build de ejemplo con SLSA" > dist/build.txt
+          echo "Compilación de ejemplo con SLSA" > dist/build.txt
 
-      - name: Generar Provenance
-        uses: slsa-framework/slsa-github-generator@v2.1.0
+      - name: Generar Procedencia
+        uses: slsa-framework/slsa-github-generator/generator/javascript@v2
         with:
           artifact_path: ./dist
+

@@ -22,6 +22,6 @@ jobs:
           echo "Build de ejemplo con SLSA" > dist/build.txt
 
       - name: Generar Provenance
-        uses: slsa-framework/slsa-github-generator@v1.3.0
+        uses: slsa-framework/slsa-github-generator@v2.1.0
         with:
           artifact_path: ./dist

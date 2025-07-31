@@ -1,4 +1,4 @@
-name: SLSA Provenance v1
+name: SLSA Provenance v2
 
 on:
   push:

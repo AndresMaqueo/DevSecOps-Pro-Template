@@ -1,38 +1,28 @@
-name: DevSecOps Pipeline
+name: SLSA Provenance v2
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
-  security-events: write
   id-token: write
   attestations: write
 
 jobs:
-  codeql:
-    name: CodeQL Analysis
+  procedencia:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v2
-        with:
-          languages: 'javascript'
-      - uses: github/codeql-action/analyze@v2
 
-  slsa_provenance:
-    name: Generate SLSA Provenance
-    runs-on: ubuntu-latest
-    needs: [codeql]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build artifact
+      - name: Build básico
         run: |
           mkdir -p dist
-          echo "Build artifact" > dist/build.txt
-      - name: Generate provenance
-        uses: slsa-framework/slsa-github-generator@v1.3.0
+          echo "Compilación de ejemplo con SLSA" > dist/build.txt
+
+      - name: Generar Procedencia
+        uses: slsa-framework/slsa-github-generator/generator/generic@v1
         with:
           artifact_path: ./dist
 

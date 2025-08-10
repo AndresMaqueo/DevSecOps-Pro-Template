@@ -15,13 +15,26 @@ jobs:
     name: CodeQL Analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List JS and Python files (diagnóstico)
+        run: |
+          echo "Listing JavaScript files:"
+          find . -type f -name "*.js"
+          echo "Listing Python files:"
+          find . -type f -name "*.py"
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
         with:
-          languages: |
-            javascript
-            python
-      - uses: github/codeql-action/analyze@v3
+          languages: javascript, python
+
+      - name: Autobuild (prepara entorno)
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
 
   slsa_provenance:
     name: Generate SLSA Provenance
@@ -37,5 +50,6 @@ jobs:
         uses: slsa-framework/slsa-github-generator@v2.1.0
         with:
           artifact_path: ./dist/build.txt
+
 
 

@@ -27,8 +27,7 @@ jobs:
           msdo provenance generate --output provenance.json
 
       - name: Upload SLSA Provenance artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: slsa-provenance
           path: provenance.json
-

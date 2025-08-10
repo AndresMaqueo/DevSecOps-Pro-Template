@@ -19,7 +19,10 @@ jobs:
       - name: Inicializar CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: javascript
+          languages: python
 
       - name: Ejecutar análisis CodeQL
         uses: github/codeql-action/analyze@v3
+        with:
+          category: security
+          output: results.sarif

@@ -1,0 +1,50 @@
+# safety-report.txt
+
+Este archivo debe contener el reporte de seguridad del proyecto. Aquí se incluyen los siguientes elementos:
+
+1. **Resumen de Seguridad**
+    - Breve descripción del estado de seguridad del proyecto.
+
+2. **Dependencias Analizadas**
+    - Lista de dependencias revisadas y sus versiones.
+    - Herramientas utilizadas para el análisis (por ejemplo, Dependabot, Snyk, etc.).
+
+3. **Vulnerabilidades Detectadas**
+    - Descripción de vulnerabilidades encontradas.
+    - Severidad y posibles impactos.
+    - Referencias a CVEs o reportes oficiales.
+
+4. **Acciones Tomadas**
+    - Medidas implementadas para mitigar o corregir vulnerabilidades.
+    - Actualizaciones de dependencias o configuraciones.
+
+5. **Recomendaciones**
+    - Sugerencias para mejorar la seguridad futura del proyecto.
+
+6. **Fecha del Reporte**
+    - Fecha de generación del reporte.
+
+---
+
+_Ejemplo de llenado:_
+
+**Resumen de Seguridad:**  
+El análisis de seguridad se realizó el 10/06/2024. Se detectaron dos vulnerabilidades de severidad media en dependencias de terceros.
+
+**Dependencias Analizadas:**  
+- express 4.17.1  
+- lodash 4.17.21  
+Herramienta: npm audit
+
+**Vulnerabilidades Detectadas:**  
+- lodash: Prototype Pollution (CVE-2021-23337)  
+  Severidad: Media
+
+**Acciones Tomadas:**  
+- Actualización de lodash a la versión 4.17.22
+
+**Recomendaciones:**  
+- Realizar análisis de seguridad mensualmente.
+
+**Fecha del Reporte:**  
+10/06/2024

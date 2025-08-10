@@ -1,50 +1,67 @@
-# safety-report.txt
++==============================================================================+
 
-Este archivo debe contener el reporte de seguridad del proyecto. Aquí se incluyen los siguientes elementos:
+                               /$$$$$$            /$$
+                              /$$__  $$          | $$
+           /$$$$$$$  /$$$$$$ | $$  \__//$$$$$$  /$$$$$$   /$$   /$$
+          /$$_____/ |____  $$| $$$$   /$$__  $$|_  $$_/  | $$  | $$
+         |  $$$$$$   /$$$$$$$| $$_/  | $$$$$$$$  | $$    | $$  | $$
+          \____  $$ /$$__  $$| $$    | $$_____/  | $$ /$$| $$  | $$
+          /$$$$$$$/|  $$$$$$$| $$    |  $$$$$$$  |  $$$$/|  $$$$$$$
+         |_______/  \_______/|__/     \_______/   \___/   \____  $$
+                                                          /$$  | $$
+                                                         |  $$$$$$/
+  by safetycli.com                                        \______/
 
-1. **Resumen de Seguridad**
-    - Breve descripción del estado de seguridad del proyecto.
++==============================================================================+
 
-2. **Dependencias Analizadas**
-    - Lista de dependencias revisadas y sus versiones.
-    - Herramientas utilizadas para el análisis (por ejemplo, Dependabot, Snyk, etc.).
+ [1mANNOUNCEMENTS[0m 
 
-3. **Vulnerabilidades Detectadas**
-    - Descripción de vulnerabilidades encontradas.
-    - Severidad y posibles impactos.
-    - Referencias a CVEs o reportes oficiales.
+[33m  * Warning: requests is unpinned. Safety by default does not report on[0m 
+[33m    potential vulnerabilities in unpinned packages. It is recommended to pin[0m 
+[33m    your dependencies unless this is a library meant for distribution. To learn[0m 
+[33m    more about reporting these, specifier range handling, and options for[0m 
+[33m    scanning unpinned packages visit https://docs.pyup.io/docs/safety-range-[0m 
+[33m    specs[0m 
 
-4. **Acciones Tomadas**
-    - Medidas implementadas para mitigar o corregir vulnerabilidades.
-    - Actualizaciones de dependencias o configuraciones.
++==============================================================================+
 
-5. **Recomendaciones**
-    - Sugerencias para mejorar la seguridad futura del proyecto.
+ [1mREPORT[0m 
 
-6. **Fecha del Reporte**
-    - Fecha de generación del reporte.
+  Safety [1mv3.0.1[0m is scanning for [1mVulnerabilities[0m[1m...[0m
+[1m  Scanning dependencies[0m in your [1mfiles:[0m
 
----
+  -> requirements.txt
 
-_Ejemplo de llenado:_
+  Using [1mopen-source vulnerability database[0m
+[1m  Found and scanned 7 packages[0m
+  Timestamp [1m2025-08-10 08:00:38[0m
+[1m  1[0m[1m vulnerability reported[0m
+[1m  0[0m[1m vulnerabilities ignored[0m
 
-**Resumen de Seguridad:**  
-El análisis de seguridad se realizó el 10/06/2024. Se detectaron dos vulnerabilidades de severidad media en dependencias de terceros.
++==============================================================================+
+ [1mVULNERABILITIES REPORTED[0m 
++==============================================================================+
 
-**Dependencias Analizadas:**  
-- express 4.17.1  
-- lodash 4.17.21  
-Herramienta: npm audit
+[31m-> Vulnerability found in bandit version 1.7.6[0m
+[1m   Vulnerability ID: [0m64484
+[1m   Affected spec: [0m<1.7.7
+[1m   ADVISORY: [0mBandit 1.7.7 identifies the str.replace method as a
+   potential risk for SQL injection because it can be misused in...
+[1m   PVE-2024-64484[0m
+[1m   For more information about this vulnerability, visit
+   [0mhttps://data.safetycli.com/v/64484/97c[0m
+   To ignore this vulnerability, use PyUp vulnerability id 64484 in safety�s
+   ignore command-line argument or add the ignore to your safety policy file.
 
-**Vulnerabilidades Detectadas:**  
-- lodash: Prototype Pollution (CVE-2021-23337)  
-  Severidad: Media
 
-**Acciones Tomadas:**  
-- Actualización de lodash a la versión 4.17.22
++==============================================================================+
+   [32m[1mREMEDIATIONS[0m
 
-**Recomendaciones:**  
-- Realizar análisis de seguridad mensualmente.
+  1 vulnerability was reported in 1 package. For detailed remediation & fix 
+  recommendations, upgrade to a commercial license. 
 
-**Fecha del Reporte:**  
-10/06/2024
++==============================================================================+
+
+ Scan was completed. 1 vulnerability was reported. 
+
++==============================================================================+[0m

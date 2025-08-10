@@ -1,7 +1,8 @@
 bandit==1.7.6
 flake8==7.0.0
 safety==3.0.1
-requests==2.31.0
+requests>=2.32.4
 pyyaml==6.0.1
 python-dotenv==1.0.1
 pytest==8.2.1
+

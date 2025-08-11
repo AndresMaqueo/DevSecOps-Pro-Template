@@ -1,0 +1,38 @@
+name: Generate SLSA Provenance
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  attestations: write
+  contents: read
+
+jobs:
+  generate-provenance:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Aquí deberías tener tu paso de build o compilación si aplica
+      # - name: Build
+      #   run: <comando para construir>
+
+      - name: Generate Build Provenance Attestation
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: '${{ github.workspace }}/path/a/tu/archivo.o/artefacto' # Cambia esta ruta
+
+      - name: Upload SLSA Provenance
+        uses: actions/upload-artifact@v3
+        with:
+          name: slsa-provenance
+          path: provenance.json
+        

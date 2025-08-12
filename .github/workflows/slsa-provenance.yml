@@ -19,11 +19,28 @@ jobs:
 
       - name: Install msdo tool
         run: |
-          npm install -g microsoft-security-devops
+          pip install microsoft-security-devops
 
       - name: Generate SLSA Provenance
         run: |
           msdo provenance generate --output provenance.json
+
+      - name: Validate provenance.json exists
+        run: |
+          if [ ! -f "provenance.json" ]; then
+            echo "ERROR: provenance.json was not generated!"
+            echo "Listing current directory contents:"
+            ls -la
+            exit 1
+          fi
+          echo "SUCCESS: provenance.json was generated successfully"
+
+      - name: Display provenance.json content
+        run: |
+          echo "=== provenance.json content ==="
+          cat provenance.json
+          echo "=== End of provenance.json ==="
+          echo "File size: $(wc -c < provenance.json) bytes"
 
       - name: Upload SLSA Provenance artifact
         uses: actions/upload-artifact@v4

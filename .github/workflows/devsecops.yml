@@ -37,19 +37,26 @@ jobs:
         uses: github/codeql-action/analyze@v3
 
   slsa_provenance:
-    name: Generate SLSA Provenance
+    name: Generate & Upload SLSA Provenance
     runs-on: ubuntu-latest
     needs: codeql
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Build artifact
         run: |
           mkdir -p dist
-          echo "Build artifact" > dist/build.txt
-      - name: Generate provenance
-        uses: slsa-framework/slsa-github-generator@main
+          echo "Build artifact $(date)" > dist/build.txt
+
+      - name: Generate Build Provenance
+        id: provenance
+        uses: slsa-framework/slsa-github-generator/.github-hosted@v2.0.0
         with:
-          artifact_path: ./dist/build.txt
+          subject-path: dist/build.txt
 
-
-
+      - name: Upload SLSA Provenance
+        uses: actions/upload-artifact@v4
+        with:
+          name: slsa-provenance
+          path: ${{ steps.provenance.outputs.provenance-path }}

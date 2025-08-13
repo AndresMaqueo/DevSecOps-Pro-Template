@@ -47,7 +47,7 @@ jobs:
           mkdir -p dist
           echo "Build artifact" > dist/build.txt
       - name: Generate provenance
-        uses: slsa-framework/slsa-github-generator@v2.1.0
+        uses: slsa-framework/slsa-github-generator@main
         with:
           artifact_path: ./dist/build.txt
 

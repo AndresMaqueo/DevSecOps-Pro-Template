@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Generate provenance
-        uses: github/generate-build-provenance@v1
+        uses: github/releases/generate-build-provenance@v1

@@ -20,7 +20,7 @@ jobs:
 
       - name: Install msdo tool
         run: |
-          pip install microsoft-security-devops
+          pip install microsoft-security-devops==1.0.0
 
       - name: Generate SLSA Provenance
         run: |

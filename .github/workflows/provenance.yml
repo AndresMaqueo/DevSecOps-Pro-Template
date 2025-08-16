@@ -1,3 +1,5 @@
+permissions:
+  contents: read
 name: Función del sistema de procedencia
 
 on:

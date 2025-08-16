@@ -11,5 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Build artifact
+        run: |
+          echo "contenido real del artefacto" > artefacto
       - name: Generate provenance
-        uses: github/releases/generate-build-provenance@v1
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: artefacto

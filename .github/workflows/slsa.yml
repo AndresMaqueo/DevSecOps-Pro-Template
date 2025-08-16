@@ -31,8 +31,7 @@ jobs:
           subject-path: '${{ github.workspace }}/path/a/tu/archivo.o/artefacto' # Cambia esta ruta
 
       - name: Upload SLSA Provenance
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: slsa-provenance
           path: provenance.json
-        

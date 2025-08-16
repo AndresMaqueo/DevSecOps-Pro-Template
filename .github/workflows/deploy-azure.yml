@@ -1,3 +1,42 @@
+# 🚀 Azure Web App Deployment Workflow
+#
+# This workflow automatically deploys Python applications to Azure Web App
+# with comprehensive DevSecOps practices and intelligent conditional logic.
+#
+# 📋 REQUIRED SECRETS (configure in GitHub repository settings):
+# 
+# Option 1 - Publish Profile (RECOMMENDED):
+#   • AZURE_WEBAPP_NAME      - Name of your Azure Web App
+#   • AZURE_PUBLISH_PROFILE  - Publish profile content from Azure Portal
+#
+# Option 2 - Service Principal (FALLBACK):
+#   • AZURE_WEBAPP_NAME      - Name of your Azure Web App  
+#   • AZURE_CLIENT_ID        - Service Principal App ID
+#   • AZURE_TENANT_ID        - Azure AD Tenant ID
+#   • AZURE_CLIENT_SECRET    - Service Principal Secret
+#
+# 🎯 SMART FEATURES:
+#   ✅ Conditional dependency installation (only if requirements.txt exists)
+#   ✅ Conditional test execution (only if tests/ folder or test_*.py files exist)
+#   ✅ Build artifacts generation with metadata
+#   ✅ Dual deployment methods (publish-profile preferred, credentials fallback)
+#   ✅ SLSA provenance upload (if available)
+#   ✅ Comprehensive error handling and troubleshooting
+#   ✅ Works from scratch on any Python repository
+#
+# 🔧 SETUP INSTRUCTIONS:
+#   1. Create Azure Web App in Azure Portal
+#   2. Download publish profile from Azure Portal (recommended)
+#      OR create Service Principal with deployment permissions
+#   3. Add secrets to GitHub repository settings
+#   4. Push to main branch or trigger manually
+#
+# 💡 CUSTOMIZATION:
+#   • Modify Python version in "Setup Python" step
+#   • Add custom build steps before "Generate build artifacts"
+#   • Customize deployment package in azure/webapps-deploy step
+#   • Add environment-specific configuration
+
 name: Deploy to Azure Web App
 
 on:

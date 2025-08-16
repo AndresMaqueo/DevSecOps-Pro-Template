@@ -21,14 +21,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Aquí deberías tener tu paso de build o compilación si aplica
-      # - name: Build
-      #   run: <comando para construir>
+      # Paso de build: crea el archivo esperado por el paso de attestation
+      - name: Build
+        run: mkdir -p path/a/tu/archivo.o && touch path/a/tu/archivo.o/artefacto
 
       - name: Generate Build Provenance Attestation
         uses: actions/attest-build-provenance@v1
         with:
-          subject-path: '${{ github.workspace }}/path/a/tu/archivo.o/artefacto' # Cambia esta ruta
+          subject-path: '${{ github.workspace }}/path/a/tu/archivo.o/artefacto'
 
       - name: Upload SLSA Provenance
         uses: actions/upload-artifact@v4

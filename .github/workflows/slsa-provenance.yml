@@ -1,0 +1,52 @@
+copilot/fix-61316729-e8c2-4f47-86d9-36312057a2ab
+name: Generate SLSA Provenance
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install msdo tool
+        run: |
+          pip install microsoft-security-devops==1.0.0
+
+      - name: Generate SLSA Provenance
+        run: |
+          msdo provenance generate --output provenance.json
+
+      - name: Validate provenance.json exists
+        run: |
+          if [ ! -f "provenance.json" ]; then
+            echo "ERROR: provenance.json was not generated!"
+            echo "Listing current directory contents:"
+            ls -la
+            exit 1
+          fi
+          echo "SUCCESS: provenance.json was generated successfully"
+
+      - name: Display provenance.json content
+        run: |
+          echo "=== provenance.json content ==="
+          cat provenance.json
+          echo "=== provenance.json (first 20 lines) ==="
+          head -20 provenance.json
+          echo "=== End of provenance.json preview ==="
+          echo "File size: $(wc -c < provenance.json) bytes"
+
+      - name: Upload SLSA Provenance artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: slsa-provenance
+          path: provenance.json

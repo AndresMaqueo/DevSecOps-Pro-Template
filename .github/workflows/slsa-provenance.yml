@@ -4,10 +4,9 @@ on:
   push:
     branches: [main]
     tags:
-      - 'v*' # habilita job de atestación sólo en tags tipo v1.2.3
+      - "v*"
   workflow_dispatch:
 
-# Permisos mínimos para la generación de procedencia
 permissions:
   contents: read
   id-token: write
@@ -30,40 +29,56 @@ jobs:
         with:
           fetch-depth: 1
 
-      # Ejemplo de build; reemplaza por tu proceso real si aplica
       - name: Build artifact (demo)
         run: |
           mkdir -p dist
           echo "Build $(date -Iseconds)" > dist/build.txt
 
-      # Genera procedencia (.intoto.jsonl) con SLSA generator
       - name: Generar procedencia de compilación (archivo)
         id: gen
-        uses: slsa-framework/slsa-github-generator/.github-hosted@v2.0.0
+        uses: slsa-framework/slsa-github-generator/.github-hosted@v2.1.0
         with:
           subject-path: dist/build.txt
 
-      # Sube el archivo de procedencia como artifact descargable
       - name: Cargar artefacto de procedencia SLSA
         uses: actions/upload-artifact@v4
         with:
           name: SLSA-Provenance
           path: ${{ steps.gen.outputs.provenance-path }}
 
-      # (Opcional) Sube también el artefacto de build para atestación en el job siguiente
       - name: Cargar artefacto de build
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
           path: dist/build.txt
 
+  security_scan:
+    name: Microsoft Security DevOps scan
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python (3.11)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Microsoft Security DevOps
+        uses: microsoft/security-devops-action@v1.6.0
+        with:
+          categories: "code,secrets,iac,containers"
+          uploadSarif: true
+
   attest:
     name: Attestación (sólo en tags v*)
-    # Sólo corre cuando el ref es un tag que empieza con 'refs/tags/v'
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     needs: provenance
-    # Permisos extra sólo aquí: crear GitHub Attestations
     permissions:
       attestations: write
       id-token: write
@@ -84,5 +99,3 @@ jobs:
         uses: actions/attest-build-provenance@v1
         with:
           subject-path: dist/build.txt
-
-

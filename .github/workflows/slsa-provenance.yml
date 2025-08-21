@@ -1,52 +1,38 @@
-copilot/fix-61316729-e8c2-4f47-86d9-36312057a2ab
 name: Generate SLSA Provenance
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
 
 jobs:
-  generate-provenance:
+  provenance:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      # Crea un artefacto de ejemplo; si ya tienes build real, usa tus propios archivos
+      - name: Build artifact
+        run: |
+          mkdir -p dist
+          echo "Build $(date -Iseconds)" > dist/build.txt
+
+      # Genera archivo de provenance (.intoto.jsonl) con el SLSA generator
+      - name: Generate Build Provenance (file)
+        id: gen
+        uses: slsa-framework/slsa-github-generator/.github-hosted@v2.0.0
         with:
-          python-version: '3.x'
+          subject-path: dist/build.txt
 
-      - name: Install msdo tool
-        run: |
-          pip install microsoft-security-devops==1.0.0
-
-      - name: Generate SLSA Provenance
-        run: |
-          msdo provenance generate --output provenance.json
-
-      - name: Validate provenance.json exists
-        run: |
-          if [ ! -f "provenance.json" ]; then
-            echo "ERROR: provenance.json was not generated!"
-            echo "Listing current directory contents:"
-            ls -la
-            exit 1
-          fi
-          echo "SUCCESS: provenance.json was generated successfully"
-
-      - name: Display provenance.json content
-        run: |
-          echo "=== provenance.json content ==="
-          cat provenance.json
-          echo "=== provenance.json (first 20 lines) ==="
-          head -20 provenance.json
-          echo "=== End of provenance.json preview ==="
-          echo "File size: $(wc -c < provenance.json) bytes"
-
+      # Sube el archivo de provenance como artifact descargable
       - name: Upload SLSA Provenance artifact
         uses: actions/upload-artifact@v4
         with:
           name: slsa-provenance
-          path: provenance.json
+          path: ${{ steps.gen.outputs.provenance-path }}

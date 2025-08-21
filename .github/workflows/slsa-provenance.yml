@@ -8,7 +8,6 @@ on:
 permissions:
   contents: read
   id-token: write
-  attestations: write
 
 jobs:
   provenance:
@@ -36,3 +35,4 @@ jobs:
         with:
           name: slsa-provenance
           path: ${{ steps.gen.outputs.provenance-path }}
+

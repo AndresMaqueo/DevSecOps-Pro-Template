@@ -2,16 +2,16 @@ name: Generar procedencia SLSA
 
 on:
   push:
-    branches: [ main, "fix/**" ]   # corre en main y cualquier rama fix/*
+    branches: [ main, "fix/**" ]
     tags:
       - "v*"
   workflow_dispatch:
 
-# Permisos por defecto del workflow (mínimos necesarios)
+# Permisos mínimos, incluyendo write porque el reusable lo pide
 permissions:
-  contents: read
-  id-token: write         # requerido por OIDC
-  actions: read           # slsa-generator lee metadatos del run
+  contents: write
+  id-token: write
+  actions: read
 
 concurrency:
   group: slsa-provenance-${{ github.ref }}
@@ -23,18 +23,34 @@ defaults:
 
 jobs:
   build:
-    name: Build (demo) + seed subject
+    name: Build (demo) + calcular subjects
     runs-on: ubuntu-latest
+    outputs:
+      base64_subjects: ${{ steps.hash.outputs.hashes }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Seed subject for SLSA
+      - name: Build artifact (demo)
         run: |
           mkdir -p dist
           echo "Build $(date -Iseconds)" > dist/build.txt
+
+      # Opción A: shell (simple y funciona en ubuntu-latest)
+      - name: Calcular base64-subjects (sha256 + nombre)
+        id: hash
+        run: |
+          set -euo pipefail
+          echo "hashes=$(sha256sum dist/build.txt | base64 -w0)" >> "$GITHUB_OUTPUT"
+
+      # Opción B (alternativa): acción oficial para calcular subjects
+      # - name: Create base64-subjects from file
+      #   id: hash
+      #   uses: slsa-framework/slsa-github-generator/actions/generator/generic/create-base64-subjects-from-file@v2.1.0
+      #   with:
+      #     path: dist/build.txt
 
       - name: Publicar artefacto de build
         uses: actions/upload-artifact@v4
@@ -45,33 +61,26 @@ jobs:
   provenance:
     name: SLSA provenance (SLSA3)
     needs: build
-    # permisos explícitos por si se refuerzan a nivel job
+    # Reforzamos permisos también a nivel job
     permissions:
-      contents: read
+      contents: write
       id-token: write
       actions: read
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
     with:
-      # Forma recomendada y más simple
-      subject-path: dist/build.txt
+      base64-subjects: ${{ needs.build.outputs.base64_subjects }}
     secrets: inherit
 
   security_scan:
     name: Microsoft Security DevOps scan
     runs-on: ubuntu-latest
     permissions:
-      security-events: write   # para subir SARIF a la pestaña Security
+      security-events: write
       contents: read
       id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      # (opcional) solo si un tool requiere Python; MSDO no lo necesita normalmente
-      # - name: Setup Python (3.11)
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: "3.11"
 
       - name: Run Microsoft Security DevOps
         id: msdo

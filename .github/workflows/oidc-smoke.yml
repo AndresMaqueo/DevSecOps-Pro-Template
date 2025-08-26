@@ -1,0 +1,20 @@
+name: OIDC Smoke
+on: { workflow_dispatch: {} }
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Azure (no subscription)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+
+      - name: Get a token (proof)
+        run: az account get-access-token --resource https://management.azure.com/ -o jsonc

@@ -1,3 +1,17 @@
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+
+[31m[1mDEPRECATED: [0m[33m[1mthis command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.[0m
+
+
+[32mWe highly encourage switching to the new [0m[32m[1m`scan`[0m[32m command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.[0m
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+
 +==============================================================================+
 
                                /$$$$$$            /$$
@@ -27,14 +41,14 @@
 
  [1mREPORT[0m 
 
-  Safety [1mv3.0.1[0m is scanning for [1mVulnerabilities[0m[1m...[0m
+  Safety [1mv3.6.0[0m is scanning for [1mVulnerabilities[0m[1m...[0m
 [1m  Scanning dependencies[0m in your [1mfiles:[0m
 
   -> requirements.txt
 
   Using [1mopen-source vulnerability database[0m
 [1m  Found and scanned 7 packages[0m
-  Timestamp [1m2025-08-10 08:00:38[0m
+  Timestamp [1m2025-08-25 06:17:52[0m
 [1m  1[0m[1m vulnerability reported[0m
 [1m  0[0m[1m vulnerabilities ignored[0m
 
@@ -46,11 +60,14 @@
 [1m   Vulnerability ID: [0m64484
 [1m   Affected spec: [0m<1.7.7
 [1m   ADVISORY: [0mBandit 1.7.7 identifies the str.replace method as a
-   potential risk for SQL injection because it can be misused in...
+   potential risk for SQL injection because it can be misused in constructing
+   SQL queries, potentially enabling the execution of arbitrary SQL code.http
+   s://github.com/PyCQA/bandit/pull/1044/commits/d909043ba20853c90a7cad4a5b58
+   a180f6937bf8
 [1m   PVE-2024-64484[0m
 [1m   For more information about this vulnerability, visit
    [0mhttps://data.safetycli.com/v/64484/97c[0m
-   To ignore this vulnerability, use PyUp vulnerability id 64484 in safety’s
+   To ignore this vulnerability, use PyUp vulnerability id 64484 in safetyï¿½s
    ignore command-line argument or add the ignore to your safety policy file.
 
 
@@ -65,3 +82,17 @@
  Scan was completed. 1 vulnerability was reported. 
 
 +==============================================================================+[0m
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+
+[31m[1mDEPRECATED: [0m[33m[1mthis command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.[0m
+
+
+[32mWe highly encourage switching to the new [0m[32m[1m`scan`[0m[32m command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.[0m
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+

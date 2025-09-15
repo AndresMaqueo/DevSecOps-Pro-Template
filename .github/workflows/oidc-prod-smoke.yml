@@ -1,0 +1,25 @@
+name: OIDC Prod Smoke
+on: { workflow_dispatch: {} }
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  prod-smoke:
+    name: OIDC Prod Smoke
+    runs-on: ubuntu-latest
+    environment: Prod
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Azure Login (env: prod, no subscription)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+
+      - name: Get an access token (test)
+        run: az account get-access-token --resource https://management.azure.com/ -o jsonc

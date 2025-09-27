@@ -1,0 +1,5 @@
+typer==0.12.5
+safety>=3.2.0
+bandit
+flake8
+pytest

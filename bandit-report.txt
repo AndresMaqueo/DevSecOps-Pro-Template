@@ -1,4 +1,4 @@
-Run started:2025-08-25 12:13:37.894027
+Run started:2025-09-27 16:08:21.193374
 
 Test results:
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3169,110 +3169,110 @@ Test results:
    Severity: Medium   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b102_exec_used.html
-   Location: .\.venv\Lib\site-packages\cffi\setuptools_ext.py:25:4
-24	    code = compile(src, filename, 'exec')
-25	    exec(code, glob, glob)
-26	
+   Location: .\.venv\Lib\site-packages\cffi\setuptools_ext.py:26:4
+25	    code = compile(src, filename, 'exec')
+26	    exec(code, glob, glob)
+27	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\setuptools_ext.py:211:4
-210	def cffi_modules(dist, attr, value):
-211	    assert attr == 'cffi_modules'
-212	    if isinstance(value, basestring):
+   Location: .\.venv\Lib\site-packages\cffi\setuptools_ext.py:224:4
+223	def cffi_modules(dist, attr, value):
+224	    assert attr == 'cffi_modules'
+225	    if isinstance(value, basestring):
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:342:8
-341	    def _generate_cpy_function_collecttype(self, tp, name):
-342	        assert isinstance(tp, model.FunctionPtrType)
-343	        if tp.ellipsis:
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:345:8
+344	    def _generate_cpy_function_collecttype(self, tp, name):
+345	        assert isinstance(tp, model.FunctionPtrType)
+346	        if tp.ellipsis:
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:353:8
-352	    def _generate_cpy_function_decl(self, tp, name):
-353	        assert isinstance(tp, model.FunctionPtrType)
-354	        if tp.ellipsis:
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:356:8
+355	    def _generate_cpy_function_decl(self, tp, name):
+356	        assert isinstance(tp, model.FunctionPtrType)
+357	        if tp.ellipsis:
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:458:8
-457	    def _generate_cpy_struct_decl(self, tp, name):
-458	        assert name == tp.name
-459	        self._generate_struct_or_union_decl(tp, 'struct', name)
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:461:8
+460	    def _generate_cpy_struct_decl(self, tp, name):
+461	        assert name == tp.name
+462	        self._generate_struct_or_union_decl(tp, 'struct', name)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:469:8
-468	    def _generate_cpy_union_decl(self, tp, name):
-469	        assert name == tp.name
-470	        self._generate_struct_or_union_decl(tp, 'union', name)
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:472:8
+471	    def _generate_cpy_union_decl(self, tp, name):
+472	        assert name == tp.name
+473	        self._generate_struct_or_union_decl(tp, 'union', name)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:551:12
-550	            tp.force_flatten()
-551	            assert len(fieldofs) == len(fieldsize) == len(tp.fldnames)
-552	            tp.fixedlayout = fieldofs, fieldsize, totalsize, totalalignment
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:554:12
+553	            tp.force_flatten()
+554	            assert len(fieldofs) == len(fieldsize) == len(tp.fldnames)
+555	            tp.fixedlayout = fieldofs, fieldsize, totalsize, totalalignment
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:585:12
-584	                i += 2
-585	            assert i == len(layout)
-586	
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:588:12
+587	                i += 2
+588	            assert i == len(layout)
+589	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:630:12
-629	        else:
-630	            assert category == 'const'
-631	        #
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:633:12
+632	        else:
+633	            assert category == 'const'
+634	        #
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:643:12
-642	                                                          'variable type'),))
-643	            assert delayed
-644	        else:
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:646:12
+645	                                                          'variable type'),))
+646	            assert delayed
+647	        else:
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:782:16
-781	            if tp.length_is_unknown():
-782	                assert isinstance(value, tuple)
-783	                (value, size) = value
+   Location: .\.venv\Lib\site-packages\cffi\vengine_cpy.py:785:16
+784	            if tp.length_is_unknown():
+785	                assert isinstance(value, tuple)
+786	                (value, size) = value
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3473,127 +3473,127 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:434:4
-433	
-434	    import subprocess
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:436:4
 435	
+436	    import subprocess
+437	
 
 --------------------------------------------------
 >> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
    Severity: High   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b602_subprocess_popen_with_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:451:8
-450	        [str(cmd_path)] + cmd_params,
-451	        shell=True,
-452	        stdin=subprocess.PIPE,
-453	        env=env,
-454	        errors="replace",
-455	        text=True,
-456	    )
-457	    assert c.stdin is not None
-458	    try:
-459	        for text in generator:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:453:8
+452	        [str(cmd_path)] + cmd_params,
+453	        shell=True,
+454	        stdin=subprocess.PIPE,
+455	        env=env,
+456	        errors="replace",
+457	        text=True,
+458	    )
+459	    assert c.stdin is not None
+460	    try:
+461	        for text in generator:
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:457:4
-456	    )
-457	    assert c.stdin is not None
-458	    try:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:459:4
+458	    )
+459	    assert c.stdin is not None
+460	    try:
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:521:4
-520	
-521	    import subprocess
-522	    import tempfile
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:526:4
+525	
+526	    import subprocess
+527	    import tempfile
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:533:8
-532	    try:
-533	        subprocess.call([str(cmd_path), filename])
-534	    except OSError:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:538:8
+537	    try:
+538	        subprocess.call([str(cmd_path), filename])
+539	    except OSError:
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:582:8
-581	    def edit_files(self, filenames: cabc.Iterable[str]) -> None:
-582	        import subprocess
-583	
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:590:8
+589	    def edit_files(self, filenames: cabc.Iterable[str]) -> None:
+590	        import subprocess
+591	
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:664:4
-663	def open_url(url: str, wait: bool = False, locate: bool = False) -> int:
-664	    import subprocess
-665	
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:672:4
+671	def open_url(url: str, wait: bool = False, locate: bool = False) -> int:
+672	    import subprocess
+673	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:683:19
-682	        try:
-683	            return subprocess.Popen(args, stderr=null).wait()
-684	        finally:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:691:19
+690	        try:
+691	            return subprocess.Popen(args, stderr=null).wait()
+692	        finally:
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:697:19
-696	        try:
-697	            return subprocess.call(args)
-698	        except OSError:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:705:19
+704	        try:
+705	            return subprocess.call(args)
+706	        except OSError:
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:711:19
-710	        try:
-711	            return subprocess.call(args)
-712	        except OSError:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:719:19
+718	        try:
+719	            return subprocess.call(args)
+720	        except OSError:
 
 --------------------------------------------------
 >> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b607_start_process_with_partial_path.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:721:12
-720	            url = _unquote_file(url)
-721	        c = subprocess.Popen(["xdg-open", url])
-722	        if wait:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:729:12
+728	            url = _unquote_file(url)
+729	        c = subprocess.Popen(["xdg-open", url])
+730	        if wait:
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:721:12
-720	            url = _unquote_file(url)
-721	        c = subprocess.Popen(["xdg-open", url])
-722	        if wait:
+   Location: .\.venv\Lib\site-packages\click\_termui_impl.py:729:12
+728	            url = _unquote_file(url)
+729	        c = subprocess.Popen(["xdg-open", url])
+730	        if wait:
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3621,54 +3621,66 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\core.py:1619:12
-1618	        if args and callable(args[0]):
-1619	            assert len(args) == 1 and not kwargs, (
-1620	                "Use 'command(**kwargs)(callable)' to provide arguments."
-1621	            )
-1622	            (func,) = args
+   Location: .\.venv\Lib\site-packages\click\core.py:1639:12
+1638	        if args and callable(args[0]):
+1639	            assert len(args) == 1 and not kwargs, (
+1640	                "Use 'command(**kwargs)(callable)' to provide arguments."
+1641	            )
+1642	            (func,) = args
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\core.py:1668:12
-1667	        if args and callable(args[0]):
-1668	            assert len(args) == 1 and not kwargs, (
-1669	                "Use 'group(**kwargs)(callable)' to provide arguments."
-1670	            )
-1671	            (func,) = args
+   Location: .\.venv\Lib\site-packages\click\core.py:1688:12
+1687	        if args and callable(args[0]):
+1688	            assert len(args) == 1 and not kwargs, (
+1689	                "Use 'group(**kwargs)(callable)' to provide arguments."
+1690	            )
+1691	            (func,) = args
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\core.py:1825:16
-1824	                cmd_name, cmd, args = self.resolve_command(ctx, args)
-1825	                assert cmd is not None
-1826	                ctx.invoked_subcommand = cmd_name
+   Location: .\.venv\Lib\site-packages\click\core.py:1845:16
+1844	                cmd_name, cmd, args = self.resolve_command(ctx, args)
+1845	                assert cmd is not None
+1846	                ctx.invoked_subcommand = cmd_name
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\core.py:1847:16
-1846	                cmd_name, cmd, args = self.resolve_command(ctx, args)
-1847	                assert cmd is not None
-1848	                sub_ctx = cmd.make_context(
+   Location: .\.venv\Lib\site-packages\click\core.py:1867:16
+1866	                cmd_name, cmd, args = self.resolve_command(ctx, args)
+1867	                assert cmd is not None
+1868	                sub_ctx = cmd.make_context(
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\core.py:2934:8
-2933	        """
-2934	        assert self.prompt is not None
-2935	
+   Location: .\.venv\Lib\site-packages\click\core.py:2535:12
+2534	            # not to be exposed. We still assert it here to please the type checker.
+2535	            assert self.name is not None, (
+2536	                f"{self!r} parameter's name should not be None when exposing value."
+2537	            )
+2538	            # Normalize UNSET values to None, as we're about to pass them to the
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\click\core.py:3061:8
+3060	        """
+3061	        assert self.prompt is not None
+3062	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3715,54 +3727,43 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\parser.py:194:12
-193	        if self.nargs > 1:
-194	            assert value is not None
-195	            holes = sum(1 for x in value if x is None)
+   Location: .\.venv\Lib\site-packages\click\parser.py:193:12
+192	        if self.nargs > 1:
+193	            assert isinstance(value, cabc.Sequence)
+194	            holes = sum(1 for x in value if x is UNSET)
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\click\shell_completion.py:307:8
-306	        import shutil
-307	        import subprocess
-308	
+   Location: .\.venv\Lib\site-packages\click\shell_completion.py:313:8
+312	        import shutil
+313	        import subprocess
+314	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\click\shell_completion.py:314:21
-313	        else:
-314	            output = subprocess.run(
-315	                [bash_exe, "--norc", "-c", 'echo "${BASH_VERSION}"'],
-316	                stdout=subprocess.PIPE,
-317	            )
-318	            match = re.search(r"^(\d+)\.(\d+)\.\d+", output.stdout.decode())
+   Location: .\.venv\Lib\site-packages\click\shell_completion.py:320:21
+319	        else:
+320	            output = subprocess.run(
+321	                [bash_exe, "--norc", "-c", 'echo "${BASH_VERSION}"'],
+322	                stdout=subprocess.PIPE,
+323	            )
+324	            match = re.search(r"^(\d+)\.(\d+)\.\d+", output.stdout.decode())
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\click\shell_completion.py:492:4
-491	
-492	    assert param.name is not None
-493	    # Will be None if expose_value is False.
-
---------------------------------------------------
->> Issue: [B110:try_except_pass] Try, Except, Pass detected.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b110_try_except_pass.html
-   Location: .\.venv\Lib\site-packages\click\testing.py:399:20
-398	                        del os.environ[key]
-399	                    except Exception:
-400	                        pass
-401	                else:
+   Location: .\.venv\Lib\site-packages\click\shell_completion.py:514:4
+513	
+514	    assert param.name is not None
+515	    # Will be None if expose_value is False.
 
 --------------------------------------------------
 >> Issue: [B110:try_except_pass] Try, Except, Pass detected.
@@ -3774,6 +3775,17 @@ Test results:
 409	                    except Exception:
 410	                        pass
 411	                else:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b110_try_except_pass.html
+   Location: .\.venv\Lib\site-packages\click\testing.py:419:20
+418	                        del os.environ[key]
+419	                    except Exception:
+420	                        pass
+421	                else:
 
 --------------------------------------------------
 >> Issue: [B110:try_except_pass] Try, Except, Pass detected.
@@ -3851,30 +3863,30 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\asymmetric\padding.py:112:4
-111	    salt_length = emlen - hash_algorithm.digest_size - 2
-112	    assert salt_length >= 0
-113	    return salt_length
+   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\asymmetric\padding.py:110:4
+109	    salt_length = emlen - hash_algorithm.digest_size - 2
+110	    assert salt_length >= 0
+111	    return salt_length
 
 --------------------------------------------------
 >> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
    Severity: Low   Confidence: High
    CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_calls.html#b311-random
-   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\asymmetric\rsa.py:257:12
-256	    while not spotted and tries < _MAX_RECOVERY_ATTEMPTS:
-257	        a = random.randint(2, n - 1)
-258	        tries += 1
+   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\asymmetric\rsa.py:265:12
+264	    while not spotted and tries < _MAX_RECOVERY_ATTEMPTS:
+265	        a = random.randint(2, n - 1)
+266	        tries += 1
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\asymmetric\rsa.py:275:4
-274	    q, r = divmod(n, p)
-275	    assert r == 0
-276	    p, q = sorted((p, q), reverse=True)
+   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\asymmetric\rsa.py:283:4
+282	    q, r = divmod(n, p)
+283	    assert r == 0
+284	    p, q = sorted((p, q), reverse=True)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3901,20 +3913,20 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\kdf\kbkdf.py:282:8
-281	    def _prf(self, _: bytes) -> cmac.CMAC:
-282	        assert self._cipher is not None
-283	
+   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\kdf\kbkdf.py:280:8
+279	    def _prf(self, _: bytes) -> cmac.CMAC:
+280	        assert self._cipher is not None
+281	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\kdf\kbkdf.py:289:8
+   Location: .\.venv\Lib\site-packages\cryptography\hazmat\primitives\kdf\kbkdf.py:287:8
+286	
+287	        assert self._cipher is not None
 288	
-289	        assert self._cipher is not None
-290	
 
 --------------------------------------------------
 >> Issue: [B305:blacklist] Use of insecure cipher mode cryptography.hazmat.primitives.ciphers.modes.ECB.
@@ -4071,10 +4083,10 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\cryptography\x509\name.py:154:12
-153	            min_length, max_length = length_limits
-154	            assert isinstance(value, str)
-155	            c_len = len(value.encode("utf8"))
+   Location: .\.venv\Lib\site-packages\cryptography\x509\name.py:153:12
+152	            min_length, max_length = length_limits
+153	            assert isinstance(value, str)
+154	            c_len = len(value.encode("utf8"))
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -7329,161 +7341,6 @@ Test results:
 496	
 497	    assert not letter
 498	    if number:
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\pbr\git.py:27:0
-26	import re
-27	import subprocess
-28	import time
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\pbr\git.py:47:13
-46	
-47	    output = subprocess.Popen(
-48	        cmd, stdout=out_location, stderr=err_location, env=newenv
-49	    )
-50	    out = output.communicate()
-
---------------------------------------------------
->> Issue: [B110:try_except_pass] Try, Except, Pass detected.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b110_try_except_pass.html
-   Location: .\.venv\Lib\site-packages\pbr\packaging.py:266:12
-265	                version_tags.add(semver)
-266	            except Exception:
-267	                pass
-268	
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\pbr\tests\fixtures.py:45:0
-44	import re
-45	import subprocess
-46	import textwrap
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\fixtures.py:104:15
-103	        self.kwargs['env'] = env
-104	        proc = subprocess.Popen(*self.args, **self.kwargs)
-105	        out, err = proc.communicate()
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\fixtures.py:218:8
-217	        )
-218	        assert retcode == 0, 'gpg key generation failed!'
-219	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\functional\test_commands.py:58:8
-57	        stdout, _, _ = self.run_setup('--keywords')
-58	        assert stdout == 'packaging, distutils, setuptools'
-59	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\functional\test_extra_files.py:61:12
-60	        except IndexError:
-61	            assert False, 'source dist not found'
-62	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\functional\test_hooks.py:71:8
-70	        stdout, _, return_code = self.run_setup('egg_info')
-71	        assert 'test_hook_1\ntest_hook_2' in stdout
-72	        assert return_code == 0
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\functional\test_hooks.py:72:8
-71	        assert 'test_hook_1\ntest_hook_2' in stdout
-72	        assert return_code == 0
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\pbr\tests\functional\test_wsgi_scripts.py:20:0
-19	import re
-20	import subprocess
-21	import sys
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\functional\test_wsgi_scripts.py:107:12
-106	
-107	        p = subprocess.Popen(
-108	            popen_cmd,
-109	            stdout=subprocess.PIPE,
-110	            stderr=subprocess.PIPE,
-111	            cwd=self.temp_dir,
-112	            env=env,
-113	        )
-114	        self.addCleanup(p.kill)
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: .\.venv\Lib\site-packages\pbr\tests\util.py:48:0
-47	import stat
-48	import subprocess
-49	import sys
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\pbr\tests\util.py:95:8
-94	    print('Running %s' % ' '.join(args))
-95	    p = subprocess.Popen(
-96	        args,
-97	        stdin=subprocess.PIPE,
-98	        stdout=subprocess.PIPE,
-99	        stderr=subprocess.PIPE,
-100	        cwd=cwd,
-101	        env=env,
-102	    )
-103	    streams = tuple(s.decode('latin1').strip() for s in p.communicate())
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -33538,20 +33395,20 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\cli.py:256:16
-255	                command_obj = group.get_command(ctx, command)
-256	                assert command_obj
-257	                docs += f"* `{command_obj.name}`"
+   Location: .\.venv\Lib\site-packages\typer\cli.py:247:16
+246	                command_obj = group.get_command(ctx, command)
+247	                assert command_obj
+248	                docs += f"* `{command_obj.name}`"
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\cli.py:265:12
-264	            command_obj = group.get_command(ctx, command)
-265	            assert command_obj
-266	            use_prefix = ""
+   Location: .\.venv\Lib\site-packages\typer\cli.py:256:12
+255	            command_obj = group.get_command(ctx, command)
+256	            assert command_obj
+257	            use_prefix = ""
 
 --------------------------------------------------
 >> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
@@ -33590,10 +33447,10 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\core.py:85:20
-84	                else:
-85	                    assert isinstance(c, str)
-86	                    use_completion = CompletionItem(c)
+   Location: .\.venv\Lib\site-packages\typer\core.py:82:20
+81	                else:
+82	                    assert isinstance(c, str)
+83	                    use_completion = CompletionItem(c)
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -33610,224 +33467,224 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:477:4
-476	) -> TyperGroup:
-477	    assert group_info.typer_instance, (
-478	        "A Typer instance is needed to generate a Click Group"
-479	    )
-480	    commands: Dict[str, click.Command] = {}
+   Location: .\.venv\Lib\site-packages\typer\main.py:461:4
+460	) -> TyperGroup:
+461	    assert group_info.typer_instance, (
+462	        "A Typer instance is needed to generate a Click Group"
+463	    )
+464	    commands: Dict[str, click.Command] = {}
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:514:4
-513	    cls = solved_info.cls or TyperGroup
-514	    assert issubclass(cls, TyperGroup), f"{cls} should be a subclass of {TyperGroup}"
-515	    group = cls(
+   Location: .\.venv\Lib\site-packages\typer\main.py:498:4
+497	    cls = solved_info.cls or TyperGroup
+498	    assert issubclass(cls, TyperGroup), f"{cls} should be a subclass of {TyperGroup}"
+499	    group = cls(
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:575:4
-574	) -> click.Command:
-575	    assert command_info.callback, "A command must have a callback function"
-576	    name = command_info.name or get_command_name(command_info.callback.__name__)
+   Location: .\.venv\Lib\site-packages\typer\main.py:559:4
+558	) -> click.Command:
+559	    assert command_info.callback, "A command must have a callback function"
+560	    name = command_info.name or get_command_name(command_info.callback.__name__)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:850:12
-849	                types.append(type_)
-850	            assert len(types) == 1, "Typer Currently doesn't support Union types"
-851	            main_type = types[0]
+   Location: .\.venv\Lib\site-packages\typer\main.py:841:12
+840	                types.append(type_)
+841	            assert len(types) == 1, "Typer Currently doesn't support Union types"
+842	            main_type = types[0]
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:856:12
-855	            main_type = get_args(main_type)[0]
-856	            assert not get_origin(main_type), (
-857	                "List types with complex sub-types are not currently supported"
-858	            )
-859	            is_list = True
+   Location: .\.venv\Lib\site-packages\typer\main.py:847:12
+846	            main_type = get_args(main_type)[0]
+847	            assert not get_origin(main_type), (
+848	                "List types with complex sub-types are not currently supported"
+849	            )
+850	            is_list = True
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:863:16
-862	            for type_ in get_args(main_type):
-863	                assert not get_origin(type_), (
-864	                    "Tuple types with complex sub-types are not currently supported"
-865	                )
-866	                types.append(
+   Location: .\.venv\Lib\site-packages\typer\main.py:854:16
+853	            for type_ in get_args(main_type):
+854	                assert not get_origin(type_), (
+855	                    "Tuple types with complex sub-types are not currently supported"
+856	                )
+857	                types.append(
 
 --------------------------------------------------
 >> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b607_start_process_with_partial_path.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:1127:19
-1126	        if _is_macos():
-1127	            return subprocess.Popen(
-1128	                ["open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
-1129	            ).wait()
-1130	
+   Location: .\.venv\Lib\site-packages\typer\main.py:1118:19
+1117	        if _is_macos():
+1118	            return subprocess.Popen(
+1119	                ["open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
+1120	            ).wait()
+1121	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:1127:19
-1126	        if _is_macos():
-1127	            return subprocess.Popen(
-1128	                ["open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
-1129	            ).wait()
-1130	
+   Location: .\.venv\Lib\site-packages\typer\main.py:1118:19
+1117	        if _is_macos():
+1118	            return subprocess.Popen(
+1119	                ["open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
+1120	            ).wait()
+1121	
 
 --------------------------------------------------
 >> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b607_start_process_with_partial_path.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:1134:19
-1133	        if has_xdg_open:
-1134	            return subprocess.Popen(
-1135	                ["xdg-open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
-1136	            ).wait()
-1137	
+   Location: .\.venv\Lib\site-packages\typer\main.py:1125:19
+1124	        if has_xdg_open:
+1125	            return subprocess.Popen(
+1126	                ["xdg-open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
+1127	            ).wait()
+1128	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: .\.venv\Lib\site-packages\typer\main.py:1134:19
-1133	        if has_xdg_open:
-1134	            return subprocess.Popen(
-1135	                ["xdg-open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
-1136	            ).wait()
-1137	
+   Location: .\.venv\Lib\site-packages\typer\main.py:1125:19
+1124	        if has_xdg_open:
+1125	            return subprocess.Popen(
+1126	                ["xdg-open", url], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT
+1127	            ).wait()
+1128	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:376:20
-375	                            deduped_pairs.remove(pair)
-376	                    assert not deduped_pairs, deduped_pairs
-377	                    parameters = tuple(new_parameters)
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:411:20
+410	                            deduped_pairs.remove(pair)
+411	                    assert not deduped_pairs, deduped_pairs
+412	                    parameters = tuple(new_parameters)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:1772:20
-1771	                if len(params) == 1 and not typing._is_param_expr(args[0]):
-1772	                    assert i == 0
-1773	                    args = (args,)
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:1815:20
+1814	                if len(params) == 1 and not typing._is_param_expr(args[0]):
+1815	                    assert i == 0
+1816	                    args = (args,)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:1977:24
-1976	                    if len(params) == 1 and not _is_param_expr(args[0]):
-1977	                        assert i == 0
-1978	                        args = (args,)
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:2020:24
+2019	                    if len(params) == 1 and not _is_param_expr(args[0]):
+2020	                        assert i == 0
+2021	                        args = (args,)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:2454:12
-2453	        def __typing_unpacked_tuple_args__(self):
-2454	            assert self.__origin__ is Unpack
-2455	            assert len(self.__args__) == 1
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:2500:12
+2499	        def __typing_unpacked_tuple_args__(self):
+2500	            assert self.__origin__ is Unpack
+2501	            assert len(self.__args__) == 1
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:2455:12
-2454	            assert self.__origin__ is Unpack
-2455	            assert len(self.__args__) == 1
-2456	            arg, = self.__args__
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:2501:12
+2500	            assert self.__origin__ is Unpack
+2501	            assert len(self.__args__) == 1
+2502	            arg, = self.__args__
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:2465:12
-2464	        def __typing_is_unpacked_typevartuple__(self):
-2465	            assert self.__origin__ is Unpack
-2466	            assert len(self.__args__) == 1
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:2511:12
+2510	        def __typing_is_unpacked_typevartuple__(self):
+2511	            assert self.__origin__ is Unpack
+2512	            assert len(self.__args__) == 1
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:2466:12
-2465	            assert self.__origin__ is Unpack
-2466	            assert len(self.__args__) == 1
-2467	            return isinstance(self.__args__[0], TypeVarTuple)
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:2512:12
+2511	            assert self.__origin__ is Unpack
+2512	            assert len(self.__args__) == 1
+2513	            return isinstance(self.__args__[0], TypeVarTuple)
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:3258:12
-3257	        def __new__(cls, typename, bases, ns):
-3258	            assert _NamedTuple in bases
-3259	            for base in bases:
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:3310:12
+3309	        def __new__(cls, typename, bases, ns):
+3310	            assert _NamedTuple in bases
+3311	            for base in bases:
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:3329:8
-3328	    def _namedtuple_mro_entries(bases):
-3329	        assert NamedTuple in bases
-3330	        return (_NamedTuple,)
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:3382:8
+3381	    def _namedtuple_mro_entries(bases):
+3382	        assert NamedTuple in bases
+3383	        return (_NamedTuple,)
 
 --------------------------------------------------
 >> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
    Severity: Medium   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_calls.html#b307-eval
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:3972:53
-3971	        return_value = {key:
-3972	            value if not isinstance(value, str) else eval(value, globals, locals)
-3973	            for key, value in ann.items() }
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:4034:53
+4033	        return_value = {key:
+4034	            value if not isinstance(value, str) else eval(value, globals, locals)
+4035	            for key, value in ann.items() }
 
 --------------------------------------------------
 >> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
    Severity: Medium   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_calls.html#b307-eval
-   Location: .\.venv\Lib\site-packages\typing_extensions.py:4064:20
-4063	            code = forward_ref.__forward_code__
-4064	            value = eval(code, globals, locals)
-4065	        forward_ref.__forward_evaluated__ = True
+   Location: .\.venv\Lib\site-packages\typing_extensions.py:4116:20
+4115	            code = forward_ref.__forward_code__
+4116	            value = eval(code, globals, locals)
+4117	        forward_ref.__forward_evaluated__ = True
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -33936,6 +33793,181 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\_bdist_wheel.py:373:12
+372	            ]
+373	            assert (
+374	                tag in supported_tags
+375	            ), f"would build wheel with unsupported tag {tag}"
+376	        return tag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\cli\tags.py:49:8
+48	    with WheelFile(wheel, "r") as f:
+49	        assert f.filename, f"{f.filename} must be available"
+50	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\macosx_libfile.py:414:4
+413	        base_version = (base_version[0], 0)
+414	    assert len(base_version) == 2
+415	    if "MACOSX_DEPLOYMENT_TARGET" in os.environ:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\macosx_libfile.py:434:4
+433	
+434	    assert len(base_version) == 2
+435	    start_version = base_version
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_manylinux.py:94:8
+93	        version_string: Optional[str] = os.confstr("CS_GNU_LIBC_VERSION")
+94	        assert version_string is not None
+95	        _, version = version_string.rsplit()
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_musllinux.py:9:0
+8	import re
+9	import subprocess
+10	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_musllinux.py:50:11
+49	        return None
+50	    proc = subprocess.run([ld], stderr=subprocess.PIPE, text=True)
+51	    return _parse_musl_version(proc.stderr)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_musllinux.py:77:4
+76	    plat = sysconfig.get_platform()
+77	    assert plat.startswith("linux-"), "not linux"
+78	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_tokenizer.py:120:8
+119	        """
+120	        assert (
+121	            self.next_token is None
+122	        ), f"Cannot check for {name!r}, already have {self.next_token!r}"
+123	        assert name in self.rules, f"Unknown token name: {name!r}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_tokenizer.py:123:8
+122	        ), f"Cannot check for {name!r}, already have {self.next_token!r}"
+123	        assert name in self.rules, f"Unknown token name: {name!r}"
+124	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\_tokenizer.py:146:8
+145	        token = self.next_token
+146	        assert token is not None
+147	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\markers.py:74:4
+73	) -> str:
+74	    assert isinstance(marker, (list, tuple, str))
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\markers.py:142:8
+141	    for marker in markers:
+142	        assert isinstance(marker, (list, tuple, str))
+143	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\markers.py:161:12
+160	        else:
+161	            assert marker in ["and", "or"]
+162	            if marker == "or":
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\tags.py:9:0
+8	import struct
+9	import subprocess
+10	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\.venv\Lib\site-packages\wheel\vendored\packaging\tags.py:418:26
+417	            # instead of the real version.
+418	            version_str = subprocess.run(
+419	                [
+420	                    sys.executable,
+421	                    "-sS",
+422	                    "-c",
+423	                    "import platform; print(platform.mac_ver()[0])",
+424	                ],
+425	                check=True,
+426	                env={"SYSTEM_VERSION_COMPAT": "0"},
+427	                stdout=subprocess.PIPE,
+428	                text=True,
+429	            ).stdout
+430	            version = cast("MacVersion", tuple(map(int, version_str.split(".")[:2])))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.6/plugins/b101_assert_used.html
    Location: .\.venv\Lib\site-packages\yaml\parser.py:185:12
 184	            event = StreamEndEvent(token.start_mark, token.end_mark)
 185	            assert not self.states
@@ -33954,19 +33986,19 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 532117
+	Total lines of code: 531374
 	Total lines skipped (#nosec): 2
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 1
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 3151
+		Low: 3154
 		Medium: 112
 		High: 35
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 14
 		Medium: 81
-		High: 3203
+		High: 3206
 Files skipped (0):

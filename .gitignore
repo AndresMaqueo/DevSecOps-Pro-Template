@@ -21,3 +21,6 @@ safety-report.txt
 # OS/editores
 .DS_Store
 *.log
+
+pip-audit-prod.txt
+pip-audit-dev.txt

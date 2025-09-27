@@ -2,7 +2,7 @@ bandit==1.7.6
 flake8==7.0.0
 requests>=2.32.4
 pyyaml==6.0.1
-python-dotenv==1.0.1
+python-dotenv==1.1.1
 pytest==8.2.1
 
 # Fix Dependabot: Authlib JWS/JWT crit headers (RFC7515) — requiere >= 1.6.4

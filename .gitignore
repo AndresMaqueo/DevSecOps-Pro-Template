@@ -1,1 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Builds / salidas
 dist/
+out/
+out2/
+
+# Reportes locales
+bandit-report.txt
+flake8-report.txt
+safety-report.txt
+
+# OS/editores
+.DS_Store
+*.log

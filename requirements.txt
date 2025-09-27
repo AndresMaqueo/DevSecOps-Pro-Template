@@ -8,3 +8,4 @@ pytest==8.2.1
 
 # Fix Dependabot: Authlib JWS/JWT crit headers (RFC7515) — requiere >= 1.6.4
 authlib>=1.6.4,<2
+

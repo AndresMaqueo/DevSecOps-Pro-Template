@@ -2,7 +2,11 @@ name: DevSecOps Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: "0 3 * * 1"  # semanal (lunes 03:00 UTC)
 
 permissions:
   contents: read
@@ -14,49 +18,61 @@ jobs:
   codeql:
     name: CodeQL Analysis
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: List JS and Python files (diagnóstico)
+      # (Opcional) Diagnóstico de contenidos
+      - name: List JS/Python files
         run: |
-          echo "Listing JavaScript files:"
-          find . -type f -name "*.js"
-          echo "Listing Python files:"
-          find . -type f -name "*.py"
+          echo "JS files:" && find . -type f -name "*.js" | sed -e 's/^/  - /'
+          echo "Python files:" && find . -type f -name "*.py" | sed -e 's/^/  - /'
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: javascript, python
+          languages: javascript, python   # ajusta según tu repo (ej. "javascript" solo)
 
-      - name: Autobuild (prepara entorno)
+      - name: Autobuild (optional)
         uses: github/codeql-action/autobuild@v3
 
-      - name: Perform CodeQL Analysis
+      - name: Analyze
         uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:multi"
 
   slsa_provenance:
     name: Generate & Upload SLSA Provenance
     runs-on: ubuntu-latest
-    needs: codeql
+    needs: [ codeql ]
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Build artifact
         run: |
           mkdir -p dist
-          echo "Build artifact $(date)" > dist/build.txt
+          echo "Build artifact $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > dist/build.txt
 
-      - name: Generate Build Provenance
+      # Generador correcto (subpath de la acción)
+      - name: Generate provenance
         id: provenance
-        uses: slsa-framework/slsa-github-generator/.github-hosted@v2.0.0
+        uses: slsa-framework/slsa-github-generator/actions/generator@v2.1.0
         with:
           subject-path: dist/build.txt
 
-      - name: Upload SLSA Provenance
+      - name: Upload provenance
         uses: actions/upload-artifact@v4
         with:
           name: slsa-provenance
           path: ${{ steps.provenance.outputs.provenance-path }}
+
+

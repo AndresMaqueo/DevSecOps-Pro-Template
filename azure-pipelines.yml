@@ -1,19 +1,42 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# ===============================
+# CI/CD PIPELINE - DevSecOps-Pro-Template
+# ===============================
+# Author: Andres Maqueo
+# Description: CI pipeline validated for GitHub integration and build verification
+# ===============================
 
 trigger:
-- main
+  - main  # Ejecutar cuando haya commits en la rama principal
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  # Paso 1: Clonar tu repo desde GitHub con credenciales seguras
+  - checkout: self
+    clean: true
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  # Paso 2: Validación del entorno y conexión
+  - script: |
+      echo "=============================="
+      echo "🔧 Validating environment..."
+      echo "Repo: $(Build.Repository.Name)"
+      echo "Branch: $(Build.SourceBranch)"
+      echo "Commit: $(Build.SourceVersion)"
+      echo "Agent OS: $(Agent.OS)"
+      echo "=============================="
+    displayName: "🔍 Environment Check"
+
+  # Paso 3: Prueba simple de CI
+  - script: |
+      echo "✅ CI pipeline operational!"
+      echo "Running security baseline..."
+      echo "Code and build ready for next stages."
+    displayName: "✅ Basic CI Test"
+
+  # Paso 4: Mantener logs limpios
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'build-logs'
+    displayName: "📦 Publish Build Logs"

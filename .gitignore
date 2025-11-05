@@ -24,3 +24,4 @@ safety-report.txt
 
 pip-audit-prod.txt
 pip-audit-dev.txt
+.vs/
